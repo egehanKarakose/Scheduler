@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal"
+              android:padding="10dp"
+              android:background="#1c313a">
+
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+    >
+
+        <TextView
+                android:id="@+id/StartTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" android:textSize="20sp"
+                android:textColor="#4caf50"/>
+
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/EndTime"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textColor="#4caf50"
+                android:gravity="bottom"
+        />
+    </LinearLayout>
+
+    <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#fdd835"
+    >
+
+    </View>
+
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp">
+
+        <TextView
+                android:id="@+id/subjectTitleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" android:textSize="24sp" android:textColor="#ef6c00"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/subjectPlaceText" android:layout_weight="1"
+                android:textSize="18sp" android:textColor="#2B99F0"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/subjectDescriptionText" android:layout_weight="1"
+                android:textSize="16sp" android:textColor="#BA91E9"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/subjectObligationText" android:layout_weight="1"
+                android:textSize="16sp" android:textColor="#E91E63"/>
+    </LinearLayout>
+
+
+</LinearLayout>
