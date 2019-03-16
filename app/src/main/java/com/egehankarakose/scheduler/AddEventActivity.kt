@@ -6,6 +6,10 @@ import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.CheckBox
+import android.widget.Spinner
 import kotlinx.android.synthetic.main.activity_add_event.*
 import java.lang.Exception
 
@@ -14,7 +18,10 @@ class AddEventActivity : AppCompatActivity() {
 
 
 
+    var obligation = "Free To Do"
 
+    lateinit var option :Spinner
+    lateinit var result: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,18 +42,34 @@ class AddEventActivity : AppCompatActivity() {
         e.printStackTrace()
     }
 
+        obligationCheckbox.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(isChecked){
+                obligation = "Have To!!!"
+            }
+        }
+
+       option = findViewById(R.id.AddEventDaySpinner) as Spinner
+        val options = arrayOf("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
+
+         option.adapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,options)
+        option.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                result = "Please Select A Day"
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                result = options.get(position)
+            }
+        }
 
     }
     fun saveEvent(view: View){
 
-        if(AddEventDayEditText.text.toString().compareTo("Monday",true)==0 ){
+        if(result.compareTo("Monday",true)==0 ){
             var title = AddEventTitleEditText.text.toString()
             var place = AddEventPlaceEditText.text.toString()
             var description = AddEventDescriptionEditText.text.toString()
-            var obligation = "Free To Do"
-            if(obligationCheckbox.isChecked){
-                var obligation = "Have To!!!"
-            }
+
             var startTime = AddEventStartEditText.text.toString()
             var endTime = AddEventEndEditText.text.toString()
 
@@ -72,14 +95,12 @@ class AddEventActivity : AppCompatActivity() {
 
 
         }
-        if(AddEventDayEditText.text.toString().compareTo("Tuesday",true) == 0){
+        if(result.compareTo("Tuesday",true) == 0){
             var title = AddEventTitleEditText.text.toString()
             var place = AddEventPlaceEditText.text.toString()
             var description = AddEventDescriptionEditText.text.toString()
-            var obligation = "Free To Do"
-            if(obligationCheckbox.isChecked){
-                var obligation = "Have To!!!"
-            }
+
+
             var startTime = AddEventStartEditText.text.toString()
             var endTime = AddEventEndEditText.text.toString()
 
@@ -104,14 +125,11 @@ class AddEventActivity : AppCompatActivity() {
 
 
         }
-        if(AddEventDayEditText.text.toString().compareTo("Wednesday",true)==0){
+        if(result.compareTo("Wednesday",true)==0){
             var title = AddEventTitleEditText.text.toString()
             var place = AddEventPlaceEditText.text.toString()
             var description = AddEventDescriptionEditText.text.toString()
-            var obligation = "Free To Do"
-            if(obligationCheckbox.isChecked){
-                var obligation = "Have To!!!"
-            }
+
             var startTime = AddEventStartEditText.text.toString()
             var endTime = AddEventEndEditText.text.toString()
             try{
@@ -134,14 +152,11 @@ class AddEventActivity : AppCompatActivity() {
             }
 
         }
-        if(AddEventDayEditText.text.toString().compareTo("thursday",true) == 0){
+        if(result.compareTo("thursday",true) == 0){
             var title = AddEventTitleEditText.text.toString()
             var place = AddEventPlaceEditText.text.toString()
             var description = AddEventDescriptionEditText.text.toString()
-            var obligation = "Free To Do"
-            if(obligationCheckbox.isChecked){
-                var obligation = "Have To!!!"
-            }
+
             var startTime = AddEventStartEditText.text.toString()
             var endTime = AddEventEndEditText.text.toString()
             try{
@@ -163,14 +178,12 @@ class AddEventActivity : AppCompatActivity() {
                 e.printStackTrace()
             }
         }
-        if(AddEventDayEditText.text.toString().compareTo("friday",true) == 0){
+        if(result.compareTo("friday",true) == 0){
             var title = AddEventTitleEditText.text.toString()
             var place = AddEventPlaceEditText.text.toString()
             var description = AddEventDescriptionEditText.text.toString()
-            var obligation = "Free To Do"
-            if(obligationCheckbox.isChecked){
-                var obligation = "Have To!!!"
-            }
+
+
             var startTime = AddEventStartEditText.text.toString()
             var endTime = AddEventEndEditText.text.toString()
             try{
@@ -192,14 +205,11 @@ class AddEventActivity : AppCompatActivity() {
                 e.printStackTrace()
             }
         }
-        if(AddEventDayEditText.text.toString().compareTo("Saturday",true)==0){
+        if(result.compareTo("Saturday",true)==0){
             var title = AddEventTitleEditText.text.toString()
             var place = AddEventPlaceEditText.text.toString()
             var description = AddEventDescriptionEditText.text.toString()
-            var obligation = "Free To Do"
-            if(obligationCheckbox.isChecked){
-                var obligation = "Have To!!!"
-            }
+
             var startTime = AddEventStartEditText.text.toString()
             var endTime = AddEventEndEditText.text.toString()
             try{
@@ -221,14 +231,11 @@ class AddEventActivity : AppCompatActivity() {
                 e.printStackTrace()
             }
         }
-        if(AddEventDayEditText.text.toString().compareTo("sunday",true) == 0 ){
+        if(result.compareTo("sunday",true) == 0 ){
             var title = AddEventTitleEditText.text.toString()
             var place = AddEventPlaceEditText.text.toString()
             var description = AddEventDescriptionEditText.text.toString()
-            var obligation = "Free To Do"
-            if(obligationCheckbox.isChecked){
-                var obligation = "Have To!!!"
-            }
+
             var startTime = AddEventStartEditText.text.toString()
             var endTime = AddEventEndEditText.text.toString()
             try{

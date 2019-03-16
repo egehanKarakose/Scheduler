@@ -31,7 +31,6 @@ class tuesday_fragment : Fragment() {
     fun addEvent(): ArrayList<Event> {
 
         var eventList: ArrayList<Event> = ArrayList()
-        var emp = Event()
 
         try {
             val eventDataBase = activity!!.openOrCreateDatabase("Event", Context.MODE_PRIVATE, null)
@@ -47,6 +46,7 @@ class tuesday_fragment : Fragment() {
             cursor.moveToFirst()
             while (cursor != null) {
 
+                var emp = Event()
 
                 emp.title = cursor.getString(titleIndex)
                 emp.place = cursor.getString(placeIndex)

@@ -18,7 +18,7 @@ class sunday_fragment : Fragment() {
 
         var view = inflater?.inflate(R.layout.sunday, container, false)
 
-        var empList: ArrayList<Event>
+        var empList: ArrayList<Event> = ArrayList()
         empList = addEvent()
 
         val listView = view.findViewById<ListView>(R.id.sundayListView)
@@ -30,7 +30,7 @@ class sunday_fragment : Fragment() {
     fun addEvent(): ArrayList<Event> {
 
         var eventList: ArrayList<Event> = ArrayList()
-        var emp = Event()
+
 
         try {
             val eventDataBase = activity!!.openOrCreateDatabase("Event", Context.MODE_PRIVATE, null)
@@ -45,6 +45,7 @@ class sunday_fragment : Fragment() {
 
             cursor.moveToFirst()
             while (cursor != null) {
+                var emp = Event()
                 emp.title = cursor.getString(titleIndex)
                 emp.place = cursor.getString(placeIndex)
                 emp.description = cursor.getString(descriptionIndex)

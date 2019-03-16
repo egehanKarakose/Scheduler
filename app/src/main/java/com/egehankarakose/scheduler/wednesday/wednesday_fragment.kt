@@ -16,7 +16,7 @@ class wednesday_fragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         var view= inflater?.inflate(R.layout.wednesday,container,false)
-        var empList : ArrayList<Event>
+        var empList : ArrayList<Event> = ArrayList()
         empList = addEvent()
 
         val listView=view.findViewById<ListView>(R.id.wednesdayListView)
@@ -27,7 +27,7 @@ class wednesday_fragment : Fragment() {
     fun addEvent(): ArrayList<Event> {
 
         var eventList: ArrayList<Event> = ArrayList()
-        var emp = Event()
+
 
         try {
             val eventDataBase = activity!!.openOrCreateDatabase("Event", Context.MODE_PRIVATE, null)
@@ -42,6 +42,7 @@ class wednesday_fragment : Fragment() {
 
             cursor.moveToFirst()
             while (cursor != null) {
+                var emp = Event()
                 emp.title = cursor.getString(titleIndex)
                 emp.place = cursor.getString(placeIndex)
                 emp.description = cursor.getString(descriptionIndex)

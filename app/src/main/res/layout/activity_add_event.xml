@@ -113,13 +113,14 @@
             app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="8dp"
             android:id="@+id/constraintLayout5">
 
-        <EditText
+        <Spinner
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/AddEventDayEditText"
+                android:id="@+id/AddEventDaySpinner"
                 android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"
                 android:textColor="@color/white"
                 android:textColorHint="@color/text"
                 android:outlineSpotShadowColor="@color/colorAccent"
@@ -144,21 +145,6 @@
                 android:layout_width="match_parent"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/AddEventEndEditText"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:textColorHint="@color/text"
-                android:outlineSpotShadowColor="@color/colorAccent"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp" android:textAllCaps="false" android:textAlignment="center"
-                android:hint="End Time" android:textSize="24sp" android:backgroundTint="@color/colorAccent"/>
-        <EditText
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:inputType="textPersonName"
-                android:ems="10"
                 android:layout_weight="1"
                 android:id="@+id/AddEventStartEditText"
                 android:layout_marginBottom="10dp"
@@ -169,9 +155,26 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp" android:textAllCaps="false" android:textAlignment="center"
                 android:hint="Start Time" android:textSize="24sp" android:backgroundTint="@color/colorAccent"/>
+        <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/AddEventEndEditText"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text"
+                android:outlineSpotShadowColor="@color/colorAccent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp" android:textAllCaps="false" android:textAlignment="center"
+                android:hint="End Time" android:textSize="24sp" android:backgroundTint="@color/colorAccent"/>
+
     </LinearLayout>
     <CheckBox
             android:text="Have to do!!!"
+            android:checked="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/obligationCheckbox" app:layout_constraintStart_toStartOf="parent"
