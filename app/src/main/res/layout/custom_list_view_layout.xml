@@ -47,31 +47,106 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginLeft="15dp">
+            android:layout_marginLeft="15dp"
+            >
 
-        <TextView
-                android:id="@+id/subjectTitleText"
+        <LinearLayout android:layout_width="match_parent"   android:layout_marginTop="4dp" android:layout_height="match_parent">
+
+
+            <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="26dp" app:srcCompat="@drawable/ic_event"
+                    android:id="@+id/titleImageView"
+                    android:layout_marginRight="5dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/subjectTitleText"/>
+
+            <TextView
+                    android:id="@+id/subjectTitleText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:text="TextView" android:textSize="24sp" android:textColor="#ef6c00"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_marginTop="4dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" android:textSize="24sp" android:textColor="#ef6c00"/>
-        <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/subjectPlaceText" android:layout_weight="1"
-                android:textSize="18sp" android:textColor="#2B99F0"/>
-        <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/subjectDescriptionText" android:layout_weight="1"
-                android:textSize="16sp" android:textColor="#BA91E9"/>
-        <TextView
-                android:text="TextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/subjectObligationText" android:layout_weight="1"
-                android:textSize="16sp" android:textColor="#E91E63"/>
+                android:layout_height="match_parent">
+
+
+            <ImageView
+                    android:layout_width="28dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_height="24dp" app:srcCompat="@drawable/ic_place"
+                    android:id="@+id/placeLayoutImageView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/subjectPlaceText"/>
+
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/subjectPlaceText"
+                    android:layout_weight="1"
+                    android:textSize="18sp" android:textColor="#2B99F0"/>
+
+
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_marginTop="4dp"   android:layout_height="match_parent">
+
+
+            <ImageView
+                    android:layout_width="26dp"
+                    android:layout_marginRight="9dp"
+                    android:layout_height="22dp" app:srcCompat="@drawable/ic_decription"
+                    android:id="@+id/descrpitionLayoutImageView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/subjectDescriptionText"/>
+
+            <TextView
+
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content" android:id="@+id/subjectDescriptionText"
+                    android:layout_weight="1"
+                    android:textSize="16sp" android:textColor="#BA91E9"/>
+
+
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"   android:layout_marginTop="4dp" android:layout_height="match_parent">
+
+
+            <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="20dp" app:srcCompat="@drawable/ic_obligation"
+                    android:id="@+id/obligatoryLayoutImageView"
+                    android:layout_marginRight="11dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/subjectObligationText"/>
+
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/subjectObligationText" android:layout_weight="1"
+                    android:textSize="16sp" android:textColor="#E91E63"/>
+
+
+        </LinearLayout>
+
+
+
+
     </LinearLayout>
 
 

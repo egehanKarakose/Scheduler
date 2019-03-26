@@ -1,5 +1,6 @@
 package com.egehankarakose.scheduler
 
+import android.app.TimePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
@@ -10,8 +11,11 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.CheckBox
 import android.widget.Spinner
+import com.egehankarakose.scheduler.utils.TimePickerFragment
+import com.egehankarakose.scheduler.utils.TimePickerFragmentEndTime
 import kotlinx.android.synthetic.main.activity_add_event.*
 import java.lang.Exception
+import java.util.*
 
 
 class AddEventActivity : AppCompatActivity() {
@@ -51,7 +55,7 @@ class AddEventActivity : AppCompatActivity() {
        option = findViewById(R.id.AddEventDaySpinner) as Spinner
         val options = arrayOf("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
 
-         option.adapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,options)
+        option.adapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,options)
         option.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 result = "Please Select A Day"
@@ -259,6 +263,20 @@ class AddEventActivity : AppCompatActivity() {
         }
         var intent = Intent(applicationContext,MainActivity::class.java)
         startActivity(intent)
+
+    }
+
+    fun setStartTime(view: View){
+
+        val newFragment = TimePickerFragment()
+        newFragment.show(fragmentManager, "Time Picker")
+
+    }
+    fun setEndTime(view: View){
+        val newFragment = TimePickerFragmentEndTime()
+        newFragment.show(fragmentManager, "Time Picker")
+
+
 
     }
 

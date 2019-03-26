@@ -1,28 +1,54 @@
 package com.egehankarakose.scheduler.monday
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
+import android.widget.AdapterView
 import androidx.fragment.app.Fragment
-import com.egehankarakose.scheduler.R
+import com.baoyz.swipemenulistview.SwipeMenuListView
+import com.egehankarakose.scheduler.EditEventActivity
 import com.egehankarakose.scheduler.Event
 import com.egehankarakose.scheduler.utils.CustomListViewAdapter
+import android.graphics.drawable.ColorDrawable
+import com.baoyz.swipemenulistview.SwipeMenuItem
+import com.baoyz.swipemenulistview.SwipeMenuCreator
+import android.graphics.Color
+import android.widget.Adapter
+import com.baoyz.swipemenulistview.SwipeMenu
+
+
+
 
 class monday_fragment : Fragment() {
 
 
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        var view = inflater?.inflate(R.layout.monday, container, false)
+        var view = inflater?.inflate(com.egehankarakose.scheduler.R.layout.monday, container, false)
         var eventList: ArrayList<Event> = ArrayList()
         eventList = addEvent()
 
 
-        val listView = view.findViewById<ListView>(R.id.mondayListView)
+        val listView = view.findViewById<SwipeMenuListView>(com.egehankarakose.scheduler.R.id.mondayListView)
         listView.adapter = CustomListViewAdapter(this.requireActivity(), eventList)
+
+
+        listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            val intent = Intent(this.requireContext(),EditEventActivity::class.java)
+            intent.putExtra("title",eventList[position].title)
+            intent.putExtra("description",eventList[position].description)
+            intent.putExtra("place",eventList[position].place)
+            intent.putExtra("day","monday")
+            startActivity(intent)
+
+
+        }
+
+
 
         return view
     }
