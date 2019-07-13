@@ -8,6 +8,8 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import com.egehankarakose.scheduler.Event
 import android.app.Activity
+import android.widget.Button
+import kotlinx.android.synthetic.main.custom_list_view_layout.view.*
 
 class CustomListViewAdapter(private var activity:Activity, private var items: ArrayList<Event>) :  BaseAdapter(){
         private class ViewHolder(row: View?) {
@@ -17,6 +19,8 @@ class CustomListViewAdapter(private var activity:Activity, private var items: Ar
             var obligation: TextView? = null
             var startTime: TextView? = null
             var endTime: TextView? = null
+
+
 
             init {
                 this.title = row?.findViewById(com.egehankarakose.scheduler.R.id.subjectTitleText)
@@ -48,6 +52,9 @@ class CustomListViewAdapter(private var activity:Activity, private var items: Ar
             viewHolder.obligation?.text = emp.obligation
             viewHolder.startTime?.text = emp.startTime
             viewHolder.endTime?.text = emp.endTime
+
+
+
 
 
             return view

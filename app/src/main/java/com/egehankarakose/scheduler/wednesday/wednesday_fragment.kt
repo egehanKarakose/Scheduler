@@ -1,12 +1,15 @@
 package com.egehankarakose.scheduler.monday
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ListView
 import androidx.fragment.app.Fragment
+import com.egehankarakose.scheduler.EditEventActivity
 import com.egehankarakose.scheduler.R
 import com.egehankarakose.scheduler.Event
 import com.egehankarakose.scheduler.utils.CustomListViewAdapter
@@ -21,6 +24,16 @@ class wednesday_fragment : Fragment() {
 
         val listView=view.findViewById<ListView>(R.id.wednesdayListView)
         listView.adapter= CustomListViewAdapter(this.requireActivity(),empList)
+        listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            val intent = Intent(this.requireContext(), EditEventActivity::class.java)
+            intent.putExtra("title",empList[position].title)
+            intent.putExtra("description",empList[position].description)
+            intent.putExtra("place",empList[position].place)
+            intent.putExtra("day","wednesday")
+            startActivity(intent)
+
+
+        }
 
         return view
     }

@@ -1,5 +1,6 @@
 package com.egehankarakose.scheduler
 
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -12,18 +13,20 @@ import com.egehankarakose.scheduler.monday.*
 import com.egehankarakose.scheduler.utils.CustomListViewAdapter
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main2.*
+import java.lang.Exception
 
 
 class MainActivity : AppCompatActivity() {
 
 
 
+   var seletedFragment = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-
+        seletedFragment = intent.getIntExtra("fragmentId",0)
 
 
         var adapter = HomePagesAdapter(supportFragmentManager)
@@ -32,6 +35,8 @@ class MainActivity : AppCompatActivity() {
 
         var tabLayout = findViewById<TabLayout>(R.id.tabs)
         tabLayout.setupWithViewPager(viewPager)
+
+
 
 
 
@@ -47,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         homePagesAdapter.addFragment(sunday_fragment(),"Sun")
 
         homeViewPager.adapter = homePagesAdapter
-        homeViewPager.setCurrentItem(0)
+        homeViewPager.setCurrentItem(seletedFragment)
 
     }
 
@@ -59,6 +64,13 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    fun settings(view: View){
+        var intent = Intent(applicationContext, SettingsActivity::class.java)
+        startActivity(intent)
+
+    }
+
 
 
 }
