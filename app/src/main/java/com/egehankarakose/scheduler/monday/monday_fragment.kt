@@ -18,10 +18,16 @@ import com.baoyz.swipemenulistview.SwipeMenuItem
 import com.baoyz.swipemenulistview.SwipeMenuCreator
 import android.graphics.Color
 import android.widget.Adapter
+<<<<<<< HEAD
 import android.widget.ListView
 import com.baoyz.swipemenulistview.SwipeMenu
 import java.util.*
 import kotlin.collections.ArrayList
+=======
+import com.baoyz.swipemenulistview.SwipeMenu
+
+
+>>>>>>> bfad1ef79563061d193273a3b1c0999a7be94b6e
 
 
 class monday_fragment : Fragment() {
@@ -35,10 +41,14 @@ class monday_fragment : Fragment() {
         eventList = addEvent()
 
 
+<<<<<<< HEAD
 
 
 
         val listView = view.findViewById<ListView>(com.egehankarakose.scheduler.R.id.mondayListView)
+=======
+        val listView = view.findViewById<SwipeMenuListView>(com.egehankarakose.scheduler.R.id.mondayListView)
+>>>>>>> bfad1ef79563061d193273a3b1c0999a7be94b6e
         listView.adapter = CustomListViewAdapter(this.requireActivity(), eventList)
 
 

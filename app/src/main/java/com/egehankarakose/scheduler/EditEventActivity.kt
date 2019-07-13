@@ -23,7 +23,10 @@ class EditEventActivity : AppCompatActivity() {
     var oldDesc = ""
     var oldPlace = ""
     var eventName = ""
+<<<<<<< HEAD
     var fragmentId = 0
+=======
+>>>>>>> bfad1ef79563061d193273a3b1c0999a7be94b6e
 
 
 
@@ -48,37 +51,58 @@ class EditEventActivity : AppCompatActivity() {
 
         if(day.compareTo("monday",true) == 0){
             eventName = "mondayEvent"
+<<<<<<< HEAD
             fragmentId = 0
+=======
+>>>>>>> bfad1ef79563061d193273a3b1c0999a7be94b6e
 
         }
         if(day.compareTo("tuesday",true) == 0){
             eventName = "tuesdayEvent"
+<<<<<<< HEAD
             fragmentId = 1
+=======
+>>>>>>> bfad1ef79563061d193273a3b1c0999a7be94b6e
 
         }
         if(day.compareTo("wednesday",true) == 0){
             eventName = "wednesdayEvent"
+<<<<<<< HEAD
             fragmentId = 2
+=======
+>>>>>>> bfad1ef79563061d193273a3b1c0999a7be94b6e
 
         }
         if(day.compareTo("thursday",true) == 0){
             eventName = "thursdayEvent"
+<<<<<<< HEAD
             fragmentId = 3
+=======
+>>>>>>> bfad1ef79563061d193273a3b1c0999a7be94b6e
 
         }
         if(day.compareTo("friday",true) == 0){
             eventName = "fridayEvent"
+<<<<<<< HEAD
             fragmentId = 4
+=======
+>>>>>>> bfad1ef79563061d193273a3b1c0999a7be94b6e
 
         }
         if(day.compareTo("saturday",true) == 0){
             eventName = "saturdayEvent"
+<<<<<<< HEAD
             fragmentId = 5
+=======
+>>>>>>> bfad1ef79563061d193273a3b1c0999a7be94b6e
 
         }
         if(day.compareTo("sunday",true) == 0){
             eventName = "sundayEvent"
+<<<<<<< HEAD
             fragmentId = 6
+=======
+>>>>>>> bfad1ef79563061d193273a3b1c0999a7be94b6e
 
         }
 
@@ -120,7 +144,10 @@ class EditEventActivity : AppCompatActivity() {
             e.printStackTrace()
         }
         var intent = Intent(applicationContext,MainActivity::class.java)
+<<<<<<< HEAD
         intent.putExtra("fragmentId",fragmentId)
+=======
+>>>>>>> bfad1ef79563061d193273a3b1c0999a7be94b6e
         startActivity(intent)
 
 
@@ -133,6 +160,7 @@ class EditEventActivity : AppCompatActivity() {
         val newFragment = TimePickerEditEnd()
         newFragment.show(fragmentManager, "Time Picker")
     }
+<<<<<<< HEAD
 
     fun deleteEditEvent(view: View){
 
@@ -163,4 +191,6 @@ class EditEventActivity : AppCompatActivity() {
 
 
     }
+=======
+>>>>>>> bfad1ef79563061d193273a3b1c0999a7be94b6e
 }
